@@ -13,7 +13,7 @@ A lean, spec-driven workflow for building software with Claude: plan anywhere (w
 ## The loop
 
 0. **Set up (once).** `/spec init` writes the current-truth docs: from a discussion on a new project, from the code on an existing one. `docs/README.md` indexes them.
-1. **Plan (chat, web or mobile).** `/spec new` explores an idea, then writes a `draft` spec in `docs/specs/`. `/spec review` resolves its open questions. You approve: the spec becomes `ready`.
+1. **Plan (chat, web or mobile).** Talk the idea or the news through with Claude, then `/spec news`: it recaps what is new and what it affects, and after your yes updates the docs and writes the specs in `docs/specs/`. `/spec review` resolves its open questions. You approve: the spec becomes `ready`.
 2. **Execute (Claude Code).** `/spec run NNN` implements one `ready` spec test-first (acceptance tests written and failing before any code) on the current branch, then updates the current-truth docs. `/spec run all` (or a list of numbers) does several in a row without asking anything; what needs you lands in the final report. No pull request: each spec is a series of commits tagged `(SPEC-NNN)`, so `git revert` undoes one spec.
 3. **Close the loop (chat).** `/spec review` on anything the run sent back: specs returned to `draft`, ADRs `proposed`. You check that the branch works.
 
@@ -42,4 +42,4 @@ Formats and the full workflow live in the **`/spec` skill**, saved at account le
 1. Create a repo from this template.
 2. Make sure the `/spec` skill is enabled on your Claude account and the GitHub connector can reach the repo. If your local Claude Code CLI does not see the skill, download it into `~/.claude/skills/spec/`.
 3. First Claude Code session: fill the project line and commands in `CLAUDE.md`.
-4. Run `/spec init`, then plan your first feature with `/spec new`.
+4. Run `/spec init`, then describe your first feature and run `/spec news`.
