@@ -16,4 +16,4 @@ _Not known yet — add test, lint, typecheck and build commands here once they e
 - The current-truth docs indexed in `docs/README.md` describe the system as it is. Keep them true: a change that alters a rule updates its doc in the same series of commits.
 - If a spec, a current-truth doc, an accepted ADR and the code disagree, stop and report it. Do not resolve it silently. Existing code that does not yet follow an accepted ADR is work for a spec, not a disagreement.
 - Specs, ADRs and current-truth docs live in `docs/` and follow the `/spec` skill (formats and workflow).
-- If the session-start board lists drafts or proposed ADRs, mention them in one line in your first reply.
+- If the session-start board lists drafts, proposed ADRs or open questions, mention them in one line in your first reply.
