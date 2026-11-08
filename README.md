@@ -17,6 +17,7 @@ A lean, spec-driven workflow for building software with Claude: design by talkin
 | `/spec` | Explains the workflow |
 | `/spec ?` | Where the project stands and what to do next (or just ask in words) |
 | `/spec run NNN` / `all` | Claude Code only: implements `ready` specs, test-first, on the current branch |
+| `/spec autorun` | Claude Code only: works alone while you are away (asks your time away and a brief first), on an `autorun/` branch you merge or delete on return |
 
 Everything else is automatic: setting up the current-truth docs on a new or existing repo, recording design decisions, reviewing drafts and proposed ADRs, reminding you of open questions when you come back.
 
