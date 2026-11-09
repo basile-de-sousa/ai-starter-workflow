@@ -17,7 +17,7 @@ A lean, spec-driven workflow for building software with Claude: design by talkin
 | `/spec` | Explains the workflow |
 | `/spec ?` | Where the project stands and what to do next (or just ask in words) |
 | `/spec run NNN` / `all` | Claude Code only: implements `ready` specs, test-first, on the current branch |
-| `/spec autorun` | Claude Code only: works alone while you are away (asks your time away and a brief first), on an `autorun/` branch you merge or delete on return |
+| `/spec autorun` | Claude Code only: works alone while you are away (asks your time away and a brief first), on an `autorun/` branch whose pull request you merge or close on return |
 
 Everything else is automatic: setting up the current-truth docs on a new or existing repo, recording design decisions, reviewing drafts and proposed ADRs, reminding you of open questions when you come back.
 
@@ -41,7 +41,7 @@ Bugs, playtest or usage feedback take the lightest lane that keeps docs and code
 | `in-progress` | Claimed by `/spec run` |
 | `done` | Implemented, tests green, current-truth docs updated |
 
-A run pulls the latest specs first (fast-forward only), writes failing acceptance tests before any code, and tags every commit `(SPEC-NNN)`: `git revert` undoes one spec, no pull request needed. On the default branch it asks once whether to push there or create `run/YYYY-MM-DD`; the choice can be remembered per clone (`git config --local spec.runOn`, never pushed).
+A run pulls the latest specs first (fast-forward only), writes failing acceptance tests before any code, and tags every commit `(SPEC-NNN)`: `git revert` undoes one spec. On the default branch it asks once whether to push there or create `run/YYYY-MM-DD`; the choice can be remembered per clone (`git config --local spec.runOn`, never pushed). Work on your current branch needs no pull request; a branch the run creates ends with one, carrying the report, so you review one diff and merge from your phone.
 
 Decisions a spec did not make are judged by the cost of being wrong: cheap → implementation notes; costly with a sensible default → ADR `proposed` for your review; depends on product intent → spec back to `draft` with a question.
 
